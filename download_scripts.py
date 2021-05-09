@@ -2,14 +2,13 @@
 import argparse
 import boto3
 
-def download_git_file(file: str, commit_id: str, repo: str = 'CSHub-Scripts') -> None:
+def download_git_file(file: str, repo: str = 'CSHub-Scripts') -> None:
     '''Downloads a specific file from a codecommit git repository'''
 
     # Get file as byte string
     response = codecommit.get_file(
         repositoryName=repo,
-        filePath=file,
-        commitSpecifier=commit_id
+        filePath=file
     )
     # Save to file
     with open(file, "w+") as f:
@@ -32,4 +31,6 @@ if __name__ == '__main__':
     codecommit = session.client('codecommit')
 
     # Download CSHub-Scripts
-    download_git_file('hello.py', '782efd459a2883f257e6aeb0022fd79e15650ce8')
+    download_git_file('sess_start.py')
+    download_git_file('packs.py')
+    download_git_file('autostop.py')
