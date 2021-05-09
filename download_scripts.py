@@ -1,4 +1,4 @@
-# Script to download the private ssh key of code commit
+# Script to download the CSHub scripts from code commit repository
 import argparse
 import boto3
 
