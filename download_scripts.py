@@ -31,6 +31,5 @@ if __name__ == '__main__':
     codecommit = session.client('codecommit')
 
     # Download CSHub-Scripts
-    download_git_file('sess_start.py')
     download_git_file('packs.py')
     download_git_file('autostop.py')
